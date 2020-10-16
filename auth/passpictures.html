@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<!--
+	Template by: HTML5UP html5up.net Edited by: EthanDevelops bennun.me / ethandevelops.github.io
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Welcome To bennun.me</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+
+        <img id="img1" alt="Failed to load image.">
+        <img id="img2" alt="Failed to load image.">
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+			<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+	 <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-analytics.js"></script>
+	 <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+	 <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCrzEF4U8XcTmC2nPtQ97c2DmZ2LFUOf5M",
+    authDomain: "bennunme-website-firebase.firebaseapp.com",
+    databaseURL: "https://bennunme-website-firebase.firebaseio.com",
+    projectId: "bennunme-website-firebase",
+    storageBucket: "bennunme-website-firebase.appspot.com",
+    messagingSenderId: "144741450935",
+    appId: "1:144741450935:web:86b8224061b8d90852f932"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  var storage = firebase.storage();
+
+			var storageRef = storage.ref();
+
+			storageRef.child('python.png').getDownloadURL().then(function (url) {
+				var img = document.getElementById('img1');
+				img.src = url;
+			}).catch(function (error) {
+				// Handle any errors
+			});
+</script>
+
+	</body>
+</html>
